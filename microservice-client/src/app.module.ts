@@ -9,10 +9,15 @@ import { Transport, ClientsModule } from '@nestjs/microservices';
       {
         name: 'HELLO_SERVICE', transport: Transport.RMQ,
         options: {
-          urls: ['amqp://guest:guest@localhost:5672/hello'],
-          queue: 'user-messages',
+          urls: ['amqp://guest:guest@localhost:5672/'],
+          queue: 'task_queue1',
           queueOptions: {
-            durable: false
+            durable: true,
+            arguments: {
+              "x-max-priority": 2,
+            },
+            prefetchCount: 1,
+            persistent: true,
           },
         },
       },

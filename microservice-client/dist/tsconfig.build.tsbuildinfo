@@ -1522,11 +1522,11 @@
         "signature": "6116d2707bcd938164a363414adbd9f73445f825c60d3f003f304d31004e0565"
       },
       "../src/app.controller.ts": {
-        "version": "f5c8a625d47780a7a63a1231024ea8f82c623435917ba87bbbbcf014fd237333",
+        "version": "6bdbdb5a5bd4034f66337db0221504cf4da3144792085e0ef9b19d889c8ba025",
         "signature": "20e9fff6b6cf546ddf090ae5768de82c0436165740a001962ccbd1bf29c5f74c"
       },
       "../src/app.module.ts": {
-        "version": "1f5f001a715fea8bb90ca5a818b1ee932b117ec9a009030416bab8cbec4f85e0",
+        "version": "94cbe172eb101768a46bf805ff0972b1272ce50a542d8fda72fcbf97123ec986",
         "signature": "b82491e2990291580288c5602d4c017238977749d52b17391f0e45d9a29be644"
       },
       "../src/main.ts": {

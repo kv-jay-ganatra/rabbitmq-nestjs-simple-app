@@ -22,8 +22,8 @@ let AppController = class AppController {
     async onApplicationBootstrap() {
     }
     getHello() {
-        this.client.emit('message_printed', new message_event_1.Message('Hello World 32112'));
-        return 'Hello World printed';
+        this.client.emit('message_printed', new message_event_1.Message('A very hard task which takes two seconds..11111'));
+        return 'A very hard task which takes two seconds..2222';
     }
 };
 __decorate([

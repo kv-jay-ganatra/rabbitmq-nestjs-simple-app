@@ -13,7 +13,7 @@ export class AppController {
 
   @Get()
   getHello() {
-    this.client.emit<any>('message_printed', new Message('Hello World 32112'));
-    return 'Hello World printed';
+    this.client.emit<any>('message_printed', new Message('A very hard task which takes two seconds..11111'));
+    return 'A very hard task which takes two seconds..2222';
   }
 }

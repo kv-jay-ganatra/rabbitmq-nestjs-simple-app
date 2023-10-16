@@ -19,10 +19,15 @@ AppModule = __decorate([
                 {
                     name: 'HELLO_SERVICE', transport: microservices_1.Transport.RMQ,
                     options: {
-                        urls: ['amqp://guest:guest@localhost:5672/hello'],
-                        queue: 'user-messages',
+                        urls: ['amqp://guest:guest@localhost:5672/'],
+                        queue: 'task_queue1',
                         queueOptions: {
-                            durable: false
+                            durable: true,
+                            arguments: {
+                                "x-max-priority": 2,
+                            },
+                            prefetchCount: 1,
+                            persistent: true,
                         },
                     },
                 },

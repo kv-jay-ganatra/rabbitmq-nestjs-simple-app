@@ -14,6 +14,7 @@ const microservices_1 = require("@nestjs/microservices");
 let AppController = class AppController {
     constructor() { }
     async handleMessagePrinted(data) {
+        console.log("OK");
         console.log(data.text);
     }
 };

@@ -8,6 +8,8 @@ export class AppController {
 
   @EventPattern('message_printed')
   async handleMessagePrinted(data: Record<string, unknown>) {
+
+    console.log("OK");
     console.log(data.text);
   }
 }

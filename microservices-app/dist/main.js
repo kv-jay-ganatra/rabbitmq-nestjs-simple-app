@@ -7,14 +7,19 @@ async function bootstrap() {
     const app = await core_1.NestFactory.createMicroservice(app_module_1.AppModule, {
         transport: microservices_1.Transport.RMQ,
         options: {
-            urls: ['amqp://guest:guest@localhost:5672/hello'],
-            queue: 'user-messages',
+            urls: ["amqp://guest:guest@localhost:5672/"],
+            queue: "task_queue1",
             queueOptions: {
-                durable: false
+                durable: true,
+                arguments: {
+                    "x-max-priority": 2,
+                },
+                prefetchCount: 1,
+                persistent: true,
             },
         },
     });
-    await app.listen(() => console.log('Microservice is listening'));
+    await app.listen(() => console.log("Microservice is listening"));
 }
 bootstrap();
 //# sourceMappingURL=main.js.map

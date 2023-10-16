@@ -2,6 +2,9 @@
 A simple microservice developed in Nest JS
 To open RabbitMQ, open browser and go to http://localhost:15672/ and you will see the RabbitMQ management login screen.
 
+``` shell 
+http://localhost:15672/
+```
 
 The default username and password is guest and guest respectively.
 

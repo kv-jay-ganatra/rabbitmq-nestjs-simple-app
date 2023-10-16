@@ -1,0 +1,30 @@
+version: "2.2"
+services:
+  rabbitmq:
+    image: rabbitmq:3.10-management-alpine
+    ports:
+      - 5672:5672
+      - 15672:15672
+    restart: unless-stopped
+    container_name: rabbitmq
+    volumes:
+      - ./.db/rabbitmq:/var/lib/rabbitmq
+    deploy:
+      resources:
+        limits:
+          cpus: "0.3"
+          memory: 300M
+
+  redis:
+    image: redis:6.2-alpine
+    ports:
+      - 6379:6379
+    restart: unless-stopped
+    container_name: redis
+    volumes:
+      - ./.db/redis:/data
+    deploy:
+      resources:
+        limits:
+          cpus: "0.2"
+          memory: 200M

@@ -13,5 +13,17 @@ Go to the “Admin” tab and click “Virtual Hosts” from the list of menus g
 
 let our virtual hostname be “hello” and click “Add virtual host” button to save.
 
-Run npm start in both microservice-app and microservice-client. Then go to http://localhost:3000/ and refresh. You can see “Hello World” printed in the microservice-app command line. That means our applications exchanged messages over the RabbitMQ instance we created.
+Run npm start in both microservice-app and microservice-client.
+``` shell
+cd microservice-app
+npm run start 
 
+cd microservice-client
+npm run start 
+```
+
+ Then go to http://localhost:3000/ and refresh. You can see “Hello World” printed in the microservice-app command line. That means our applications exchanged messages over the RabbitMQ instance we created.
+
+``` shell
+http://localhost:3000/
+```

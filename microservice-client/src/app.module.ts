@@ -1,16 +1,17 @@
-import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
-import { Transport, ClientsModule } from '@nestjs/microservices';
+import { Module } from "@nestjs/common";
+import { AppController } from "./app.controller";
+import { AppService } from "./app.service";
+import { Transport, ClientsModule } from "@nestjs/microservices";
 
 @Module({
   imports: [
     ClientsModule.register([
       {
-        name: 'HELLO_SERVICE', transport: Transport.RMQ,
+        name: "HELLO_SERVICE",
+        transport: Transport.RMQ,
         options: {
-          urls: ['amqp://guest:guest@localhost:5672/'],
-          queue: 'task_queue1',
+          urls: ["amqp://guest:guest@localhost:5672/"],
+          queue: "task_queue1",
           queueOptions: {
             durable: true,
             arguments: {
@@ -22,10 +23,11 @@ import { Transport, ClientsModule } from '@nestjs/microservices';
         },
       },
       {
-        name: 'UPDATE_SERVICE', transport: Transport.RMQ,
+        name: "UPDATE_SERVICE",
+        transport: Transport.RMQ,
         options: {
-          urls: ['amqp://guest:guest@localhost:5672/'],
-          queue: 'update_queue',
+          urls: ["amqp://guest:guest@localhost:5672/"],
+          queue: "update_queue",
           queueOptions: {
             durable: true,
             arguments: {
@@ -41,6 +43,4 @@ import { Transport, ClientsModule } from '@nestjs/microservices';
   controllers: [AppController],
   providers: [AppService],
 })
-export class AppModule {
-
-}
+export class AppModule {}

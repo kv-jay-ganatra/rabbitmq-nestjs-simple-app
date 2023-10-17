@@ -21,6 +21,21 @@ import { Transport, ClientsModule } from '@nestjs/microservices';
           },
         },
       },
+      {
+        name: 'UPDATE_SERVICE', transport: Transport.RMQ,
+        options: {
+          urls: ['amqp://guest:guest@localhost:5672/'],
+          queue: 'update_queue',
+          queueOptions: {
+            durable: true,
+            arguments: {
+              "x-max-priority": 2,
+            },
+            prefetchCount: 1,
+            persistent: true,
+          },
+        },
+      },
     ]),
   ],
   controllers: [AppController],

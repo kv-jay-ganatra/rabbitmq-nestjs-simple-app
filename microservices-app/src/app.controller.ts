@@ -13,7 +13,14 @@ export class AppController {
     setTimeout(function() {
       console.log(" [x] Done");
     }, secs * 3000);
-
-    console.log(data.text);
   }
+
+  @EventPattern("user_updated")
+  async handleUserUpdated(data: Record<string, unknown>) {
+ 
+    console.log('Name:',data.name);
+    console.log('Age:',data.age);
+  }
+
+
 }

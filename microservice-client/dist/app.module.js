@@ -31,6 +31,21 @@ AppModule = __decorate([
                         },
                     },
                 },
+                {
+                    name: 'UPDATE_SERVICE', transport: microservices_1.Transport.RMQ,
+                    options: {
+                        urls: ['amqp://guest:guest@localhost:5672/'],
+                        queue: 'update_queue',
+                        queueOptions: {
+                            durable: true,
+                            arguments: {
+                                "x-max-priority": 2,
+                            },
+                            prefetchCount: 1,
+                            persistent: true,
+                        },
+                    },
+                },
             ]),
         ],
         controllers: [app_controller_1.AppController],

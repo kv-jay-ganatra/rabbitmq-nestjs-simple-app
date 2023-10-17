@@ -19,7 +19,10 @@ let AppController = class AppController {
         setTimeout(function () {
             console.log(" [x] Done");
         }, secs * 3000);
-        console.log(data.text);
+    }
+    async handleUserUpdated(data) {
+        console.log('Name:', data.name);
+        console.log('Age:', data.age);
     }
 };
 __decorate([
@@ -28,6 +31,12 @@ __decorate([
     __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", Promise)
 ], AppController.prototype, "handleMessagePrinted", null);
+__decorate([
+    microservices_1.EventPattern("user_updated"),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object]),
+    __metadata("design:returntype", Promise)
+], AppController.prototype, "handleUserUpdated", null);
 AppController = __decorate([
     common_1.Controller(),
     __metadata("design:paramtypes", [])

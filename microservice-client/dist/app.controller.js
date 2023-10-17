@@ -15,15 +15,18 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const common_1 = require("@nestjs/common");
 const microservices_1 = require("@nestjs/microservices");
 const message_event_1 = require("./message.event");
+const update_event_1 = require("./update.event");
 let AppController = class AppController {
-    constructor(client) {
+    constructor(client, updateClient) {
         this.client = client;
+        this.updateClient = updateClient;
     }
     async onApplicationBootstrap() {
     }
     getHello() {
         this.client.emit('message_printed', new message_event_1.Message('A very hard task which takes two seconds..11111'));
-        return 'A very hard task which takes two seconds..2222';
+        this.updateClient.emit('user_updated', new update_event_1.Update('User 1', 10));
+        return 'Emitted Two events.';
     }
 };
 __decorate([
@@ -35,7 +38,9 @@ __decorate([
 AppController = __decorate([
     common_1.Controller(),
     __param(0, common_1.Inject('HELLO_SERVICE')),
-    __metadata("design:paramtypes", [microservices_1.ClientProxy])
+    __param(1, common_1.Inject('UPDATE_SERVICE')),
+    __metadata("design:paramtypes", [microservices_1.ClientProxy,
+        microservices_1.ClientProxy])
 ], AppController);
 exports.AppController = AppController;
 //# sourceMappingURL=app.controller.js.map

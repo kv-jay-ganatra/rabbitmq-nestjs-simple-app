@@ -1,2 +1,4 @@
 node_modules/
 .db
+microservice-client/dist/
+microservices-app/dist/

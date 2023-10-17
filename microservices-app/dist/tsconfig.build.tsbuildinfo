@@ -1514,7 +1514,7 @@
         "signature": "ff3a45e62d966d8cd7735588a451801ff62aa34060e5124457c99e2220f9d1d3"
       },
       "../src/app.controller.ts": {
-        "version": "efa85ed46c4d218716fa5fee63176516ff49226682711d9a63a8a42b377d1d1c",
+        "version": "2683219350228886e70730af7339f586cc90d0765cc42d0c75dbe4ec1aaa9789",
         "signature": "913deb3f6028f46ad6172436f538c8cfdabb3a76f773a66abfda2dfcb5c70b87"
       },
       "../src/app.service.ts": {

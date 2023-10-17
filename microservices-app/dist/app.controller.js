@@ -14,12 +14,16 @@ const microservices_1 = require("@nestjs/microservices");
 let AppController = class AppController {
     constructor() { }
     async handleMessagePrinted(data) {
-        console.log("OK");
+        var secs = data.text.toString().split(".").length - 1;
+        console.log(" [x] Received %s", data.text.toString());
+        setTimeout(function () {
+            console.log(" [x] Done");
+        }, secs * 3000);
         console.log(data.text);
     }
 };
 __decorate([
-    microservices_1.EventPattern('message_printed'),
+    microservices_1.EventPattern("message_printed"),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", Promise)

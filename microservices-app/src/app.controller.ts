@@ -1,15 +1,19 @@
-import { Controller, Get } from '@nestjs/common';
-import { EventPattern } from '@nestjs/microservices';
+import { Controller, Get } from "@nestjs/common";
+import { Ctx, EventPattern, RmqContext } from "@nestjs/microservices";
 
 @Controller()
 export class AppController {
-  constructor() { }
+  constructor() {}
 
-
-  @EventPattern('message_printed')
+  @EventPattern("message_printed")
   async handleMessagePrinted(data: Record<string, unknown>) {
+    var secs = data.text.toString().split(".").length - 1;
 
-    console.log("OK");
+    console.log(" [x] Received %s", data.text.toString());
+    setTimeout(function() {
+      console.log(" [x] Done");
+    }, secs * 3000);
+
     console.log(data.text);
   }
 }
